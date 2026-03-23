@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>契約および今後の運用に関する事前すり合わせ事項</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f8f9fc;
+      --color-white: #ffffff;
+      --color-text: #2c3e50;
+      --color-text-light: #5a6a7a;
+      --color-primary: #2a5298;
+      --color-primary-light: #e8eef8;
+      --color-accent: #e67e22;
+      --color-accent-light: #fef5ec;
+      --color-border: #dde3ed;
+      --color-section1: #2a5298;
+      --color-section2: #1a7a5a;
+      --color-section3: #6c5ce7;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.85;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ===== ヘッダー ===== */
+    .doc-header {
+      background: linear-gradient(135deg, #2a5298, #1e3c72);
+      color: #fff;
+      padding: 48px 40px;
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-header::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .doc-header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -30px;
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .doc-header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .doc-header .subtitle {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      opacity: 0.92;
+      position: relative;
+    }
+
+    /* ===== メタ情報 ===== */
+    .meta-bar {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 14px 24px;
+      background: var(--color-white);
+      border-radius: var(--radius);
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-sm);
+      font-size: 13px;
+      color: var(--color-text-light);
+    }
+    .meta-bar span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== セクション ===== */
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 24px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      color: #fff;
+      font-weight: 600;
+      font-size: 17px;
+    }
+    .section-header .num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .section--1 .section-header { background: linear-gradient(135deg, var(--color-section1), #1e3c72); }
+    .section--2 .section-header { background: linear-gradient(135deg, var(--color-section2), #145a42); }
+    .section--3 .section-header { background: linear-gradient(135deg, var(--color-section3), #4834d4); }
+
+    .section-intro {
+      padding: 16px 24px;
+      background: var(--color-white);
+      font-size: 14px;
+      color: var(--color-text-light);
+      border-left: 1px solid var(--color-border);
+      border-right: 1px solid var(--color-border);
+    }
+
+    .section-body {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-top: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    /* ===== 各アイテム ===== */
+    .item {
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .item:last-child { border-bottom: none; }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .item-title .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .section--1 .badge { background: var(--color-primary-light); color: var(--color-section1); }
+    .section--2 .badge { background: #e6f5ef; color: var(--color-section2); }
+    .section--3 .badge { background: #f0eefa; color: var(--color-section3); }
+
+    .item-desc {
+      font-size: 14.5px;
+      color: var(--color-text);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    /* ===== 対象書類 & 変更希望ボックス ===== */
+    .ref-box {
+      background: #f4f6fa;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 12px;
+    }
+    .ref-box .ref-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ref-box .ref-label::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 4px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+    .ref-box .ref-content {
+      font-size: 14px;
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+    .ref-box + .ref-box { margin-top: 8px; }
+
+    .change-box {
+      background: var(--color-accent-light);
+      border: 1px solid #f5d9b8;
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 8px;
+    }
+    .change-box .ref-label { color: #b06510; }
+    .change-box .ref-label::before { background: var(--color-accent); }
+    .change-box .ref-content { font-size: 14px; }
+
+    /* ===== 強調テキスト ===== */
+    .item-desc strong, .ref-content strong {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    /* ===== フッター ===== */
+    .doc-footer {
+      text-align: center;
+      padding: 32px 0;
+      font-size: 12px;
+      color: #aab;
+    }
+
+    /* ===== 印刷対応 ===== */
+    @media print {
+      body { background: #fff; font-size: 13px; }
+      .container { padding: 0; max-width: 100%; }
+      .doc-header { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .item { break-inside: avoid; }
+    }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 640px) {
+      .container { padding: 16px 12px 48px; }
+      .doc-header { padding: 32px 24px; }
+      .doc-header h1 { font-size: 20px; }
+      .item { padding: 20px 16px; }
+      .ref-box, .change-box { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== ヘッダー ===== -->
+  <div class="doc-header">
+    <h1>契約および今後の運用に関する<br>事前すり合わせ事項</h1>
+    <p class="subtitle">
+      本資料は、事前に提示いただいた「SaaS開発業務委託契約書」および「出資契約書」の締結、ならびに今後の共同事業の運用にあたり、事前に目線合わせをしておきたい項目や、契約書面への具体的な追記・修正のお願いを整理したものです。
+    </p>
+  </div>
+
+  <!-- メタ情報 -->
+  <div class="meta-bar">
+    <span>📋 対象契約：出資契約書 ／ SaaS開発業務委託契約書</span>
+    <span>📄 全 10 項目</span>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- セクション 1 -->
+  <!-- ============================================================ -->
+  <div class="section section--1">
+    <div class="section-header">
+      <span class="num">1</span>
+      契約の立て付け・解釈についての確認
+    </div>
+    <div class="section-body">
+
+      <!-- 1-1 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">1-1</span>
+          新法人への事業移管時の権利保全
+        </div>
+        <p class="item-desc">
+          将来的にSaaS事業を新法人へ移管し、その後に売却を行う可能性があると思います。現在の出資契約の当事者は貴社と安藤であるため、新法人に移管されたあとも出資における権利（売却時の配当権など）が正しく承継されるよう、契約上の立て付けの調整をお願いいたします。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">出資契約書 第3条 および 第4条</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            <strong>第3条</strong>：配当条件の「乙が本事業を第三者に売却した場合」に、（事業譲渡等に加え、子会社や新設法人への事業移管後に当該法人が実質的に売却等される場合を含む）旨の追記をお願いします。<br><br>
+            <strong>第4条</strong>：新法人設立時・事業移管時にも、配当権や同意権が私（安藤）に引き継がれる一文の追記、または移管自体への同意規定の追加をお願いします。
+          </div>
+        </div>
+      </div>
+
+      <!-- 1-2 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">1-2</span>
+          売却時の「諸経費」の取り扱い
+        </div>
+        <p class="item-desc">
+          事業売却時、利益から差し引かれる「諸経費」について、事後の認識ズレを防ぐため以下のルール化をお願いできれば幸いです。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">出資契約書 第3条（経費の控除に関する記載）</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            「乙は、売却金額から差し引かれる費用の明細を甲に開示・共有するものとする。また、多額で想定外の経費支出が見込まれる場合は、事前に甲へ通知する」といった趣旨の一文の追記をお願いします。
+          </div>
+        </div>
+      </div>
+
+      <!-- 1-3 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">1-3</span>
+          秘密保持等の責任分担
+        </div>
+        <p class="item-desc">
+          お互いに合理的な安全管理措置を講じていたにもかかわらず、意図せず情報漏えい等が発生してしまった場合については、一方の全責任（青天井の賠償等）とするのではなく、双方が協力して協議の上で対応・責任分担を行う形とさせてください。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">業務委託契約書 第22条3項、出資契約書 第7条</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            「乙が合理的な安全管理措置を講じていたにもかかわらず発生した漏えい等については、甲乙で協議のうえ対応および責任の分担を決定する」といった例外措置（免責・負担軽減アプローチ）の追記をお願いします。
+          </div>
+        </div>
+      </div>
+
+      <!-- 1-4 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">1-4</span>
+          事業報告遅延の猶予日数
+        </div>
+        <p class="item-desc">
+          報告の猶予日数につき、実務上の準備期間を考慮した設定の確認です。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">出資契約書 第9条2項</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            「〇日以上事業報告を遅延し」の空欄部分について、「21日（3週間）」を目安としてご記入をお願いいたします。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- セクション 2 -->
+  <!-- ============================================================ -->
+  <div class="section section--2">
+    <div class="section-header">
+      <span class="num">2</span>
+      開発・保守の実働と「個別契約」の進め方
+    </div>
+    <div class="section-intro">
+      現状、スピードを優先してβ版の開発・テストが先行しております。これを踏まえ、実働フェーズのルールを以下のようにすり合わせさせてください。
+    </div>
+    <div class="section-body">
+
+      <!-- 2-1 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">2-1</span>
+          個別契約の締結タイミングの先送り
+        </div>
+        <p class="item-desc">
+          要件が手探りな現状で詳細な業務範囲を定めた個別契約を結ぶことは、一旦見送りたいと考えております。まずは「お互いベストエフォートで初回リリースに向けて走る」形とし、リリースが見えた段階で改めて個別契約を巻く運用で合意をお願いします。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">（契約書の修正は不要）</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            基本契約とは別に、「個別契約の締結はリリース時の〇月を目処とし、それまでは暫定的にベストエフォートで開発を進行する」旨を、文面確認にて合意させてください。
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-2 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">2-2</span>
+          責任範囲と「ベストエフォート」の原則
+        </div>
+        <p class="item-desc">
+          私はシステム開発を担当しますが、あくまで共同事業パートナーとしての「ベストエフォート（準委任）」での参画となります。すべてのバグ無しを保証するような瑕疵担保責任を負う「下請けの請負業者」としての開発ではない点、ご承知おきください。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">業務委託契約書 第4条（個別契約の性質）</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            デフォルトの契約性質が準委任であることを明記し、「完成義務や修補責任を伴う『請負型』とする場合は、あらかじめ甲乙が書面で明示的に特約した場合に限る」といった歯止めとなる文言の追加をお願いします。
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-3 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">2-3</span>
+          将来的な「保守報酬（継続報酬）」を協議する余地について
+        </div>
+        <p class="item-desc">
+          絶対に毎月報酬が欲しいという前提ではなく、赤字の間は私の稼働に対する月額費用等を請求するつもりはありません。また、私がランニングで報酬を得ることで「最終的な売却益（企業価値の評価）」にマイナスになるのであれば、無理に求めることはしません。<br><br>
+          ただ、<strong>「私の実働工数が想定外に膨らんだ場合」「大幅な黒字が出た場合」</strong>あるいは<strong>「売却（M&amp;A）ではなく、自社で長く運用し続ける方針にシフトした場合」</strong>など、事業状況に変化があった際には「売上連動型等の保守・ランニング報酬」を柔軟に協議させてもらえる余地（共通認識）を持たせていただきたいと考えております。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">（契約書の修正は不要）</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            現時点での契約書への明記は求めませんが、「将来的に事業方針や収益状況、工数等に変化があった際には、ランニング報酬の発生について柔軟に協議・見直しを行うこと」を、今の段階の共通ルールとして文面確認等で合意させてください。
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-4 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">2-4</span>
+          外部委託費用の「事業経費」としての取り扱い
+        </div>
+        <p class="item-desc">
+          私（開発）と貴社（営業等）でお互いの領域を担当しますが、実働キャパシティを超える作業（例：重いデザイン業務、高度なセキュリティ診断、SNS運用代行など）を外部の専門家に委託する場合は、個人の自腹ではなく「本事業の運営経費（事業資金からの支出）」として扱うルールとさせてください。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">業務委託契約書（費用の負担規定付近）</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            「甲乙が事前協議および合意のうえで外部の専門家・リソースへ業務の一部を委託した場合、その費用は本事業の運営経費として処理し、甲がこれを負担（または事業資金より支出）する。」といった趣旨の一文の追記をお願いします。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- セクション 3 -->
+  <!-- ============================================================ -->
+  <div class="section section--3">
+    <div class="section-header">
+      <span class="num">3</span>
+      実務運用上のすり合わせ（ドキュメント・アカウント類）
+    </div>
+    <div class="section-body">
+
+      <!-- 3-1 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">3-1</span>
+          ドキュメント整備とOSS管理の簡略化
+        </div>
+        <p class="item-desc">
+          開発スピードを落とさないため、仕様書や運用手順書、OSSの依存関係一覧（SBOM）の常時完璧な更新は割愛させてください。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">業務委託契約書 第8条 および 第12条</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            提出のタイミングを「主要機能の正式リリース時、または甲から特段の合理的な求めがあった場合」に限定・緩和するような形への表現変更をお願いします。
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-2 -->
+      <div class="item">
+        <div class="item-title">
+          <span class="badge">3-2</span>
+          アカウントの順次移行（名義の問題）
+        </div>
+        <p class="item-desc">
+          契約上「アカウントはすべて貴社名義とする」旨がありますが、すでにテストやスピードを優先し、私（安藤）の個人名義で立ち上げている環境が存在します。これらは主要インフラから優先的に貴社名義へ順次移行いたします。
+        </p>
+        <div class="ref-box">
+          <div class="ref-label">対象書類・箇所</div>
+          <div class="ref-content">業務委託契約書 第13条（および第24条 解除事由）</div>
+        </div>
+        <div class="change-box">
+          <div class="ref-label">変更・追記の希望</div>
+          <div class="ref-content">
+            契約書の記載そのままで問題ありません。<br>
+            ただし実運用として、「過渡期である現在、安藤名義で立て替えているテスト環境アカウントについては、正式リリースまでを移行期間とし、順次切り替えていく（現時点で第24条等の契約違反・解除事由には該当しない）」という特例的な運用ルールについてのみ、文面で合意させてください。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    本資料は事前すり合わせのためのドラフトです。内容は協議の上で調整いたします。
+  </div>
+
+</div>
+
+</body>
+</html>
